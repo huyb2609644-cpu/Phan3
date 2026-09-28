@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="vi">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#f3f5ef">
+	<title>Infographic và video</title>
+	<style>
+		:root {
+			color-scheme: light;
+			--ink: #183b35;
+			--muted: #60736d;
+			--paper: #f3f5ef;
+			--surface: #fff;
+			--accent: #d85e3f;
+			--line: #dce4dc;
+		}
+
+		* { box-sizing: border-box; }
+
+		body {
+			margin: 0;
+			background: var(--paper);
+			color: var(--ink);
+			font-family: "Segoe UI", sans-serif;
+		}
+
+		.page {
+			width: min(1120px, calc(100% - 40px));
+			margin: 0 auto;
+			padding: 52px 0 64px;
+		}
+
+		header {
+			display: flex;
+			align-items: end;
+			justify-content: space-between;
+			gap: 24px;
+			margin-bottom: 28px;
+		}
+
+		.eyebrow {
+			margin: 0 0 10px;
+			color: var(--accent);
+			font-size: 12px;
+			font-weight: 700;
+			letter-spacing: 1.5px;
+			text-transform: uppercase;
+		}
+
+		h1 {
+			margin: 0;
+			font-family: Georgia, serif;
+			font-size: clamp(34px, 5vw, 56px);
+			font-weight: 500;
+			line-height: 1.05;
+		}
+
+		.intro {
+			max-width: 330px;
+			margin: 0 0 3px;
+			color: var(--muted);
+			font-size: 15px;
+			line-height: 1.65;
+		}
+
+		.content {
+			display: grid;
+			grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+			gap: 20px;
+			align-items: start;
+		}
+
+		.panel {
+			min-width: 0;
+			overflow: hidden;
+			border: 1px solid var(--line);
+			border-radius: 6px;
+			background: var(--surface);
+		}
+
+		.panel-heading {
+			display: flex;
+			align-items: center;
+			gap: 11px;
+			padding: 17px 20px;
+			border-bottom: 1px solid var(--line);
+		}
+
+		.number {
+			color: var(--accent);
+			font-family: Georgia, serif;
+			font-size: 14px;
+		}
+
+		h2 {
+			margin: 0;
+			font-size: 15px;
+			font-weight: 650;
+		}
+
+		.infographic-frame {
+			display: grid;
+			min-height: 300px;
+			place-items: center;
+			padding: 14px;
+			background: #e9eee7;
+		}
+
+		.infographic-frame img {
+			display: block;
+			width: 100%;
+			height: auto;
+			max-height: 680px;
+			object-fit: contain;
+		}
+
+		.video-frame {
+			background: #172c29;
+		}
+
+		video {
+			display: block;
+			width: 100%;
+			aspect-ratio: 16 / 9;
+			background: #172c29;
+		}
+
+		.panel-caption {
+			margin: 0;
+			padding: 14px 20px 17px;
+			color: var(--muted);
+			font-size: 13px;
+			line-height: 1.5;
+		}
+
+		@media (max-width: 740px) {
+			.page { width: min(560px, calc(100% - 28px)); padding-top: 32px; }
+			header { align-items: start; flex-direction: column; gap: 12px; }
+			.intro { max-width: 460px; }
+			.content { grid-template-columns: 1fr; gap: 16px; }
+		}
+	</style>
+</head>
+<body>
+	<main class="page">
+		<header>
+			<div>
+				<p class="eyebrow">Nội dung trực quan</p>
+				<h1>Infographic &amp; video</h1>
+			</div>
+			<p class="intro">Xem nhanh thông tin qua infographic, sau đó khám phá nội dung trong video.</p>
+		</header>
+
+		<section class="content" aria-label="Infographic và video">
+			<article class="panel">
+				<div class="panel-heading">
+					<span class="number" aria-hidden="true">01</span>
+					<h2>Infographic</h2>
+				</div>
+				<div class="infographic-frame">
+					<img src="Phan3.png" alt="Infographic Phan 3">
+				</div>
+				<p class="panel-caption">Hình ảnh infographic</p>
+			</article>
+
+			<article class="panel">
+				<div class="panel-heading">
+					<span class="number" aria-hidden="true">02</span>
+					<h2>Video</h2>
+				</div>
+				<div class="video-frame">
+					<video controls preload="metadata" poster="Phan3.png">
+						<source src="Phan3.mp4" type="video/mp4">
+						Trình duyệt của bạn không hỗ trợ phát video MP4.
+					</video>
+				</div>
+				<p class="panel-caption">Nhấn nút phát để xem video.</p>
+			</article>
+		</section>
+	</main>
+</body>
+</html>
